@@ -5,7 +5,7 @@
 def salvarCsv(df: pd.DataFrame, nome_arquivo: str, separador: str, decimal: str):
     df.to_csv(nome_arquivo, sep=separador, decimal=decimal)
     return
-
+~~~~
 A função foi criada para automatizar a coleta de dados trimestrais sobre os meios de pagamento disponibilizados pela API pública do Banco Central do Brasil.
 
 O que ela faz:
