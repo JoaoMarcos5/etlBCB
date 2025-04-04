@@ -1,26 +1,5 @@
 # etlBCB
 
-### Conversão de formato
-~~~~ python
-def salvarCsv(df: pd.DataFrame, nome_arquivo: str, separador: str, decimal: str):
-    df.to_csv(nome_arquivo, sep=separador, decimal=decimal)
-    return
-~~~~
-A função foi criada para automatizar a coleta de dados trimestrais sobre os meios de pagamento disponibilizados pela API pública do Banco Central do Brasil.
-
-O que ela faz:
-
-Monta a URL de requisição com base no parâmetro data, que representa o trimestre desejado (ex: "20191").
-
-Realiza uma requisição HTTP para a API do Banco Central.
-
-Converte a resposta JSON em um DataFrame do Pandas, facilitando a manipulação e análise dos dados.
-
-Padroniza a coluna datatrimestre para o tipo datetime, garantindo consistência na formatação temporal e evitando possíveis problemas com o banco de dados.
-
-
-
-    
 # Dicionário de Dados do Repositório
 
 | Nome                        | Tipo     | Título                              | Descrição |
