@@ -1,22 +1,20 @@
 import requests
 import pandas as pd
 
-
 def requestApiBcb(data: str) -> pd.DataFrame:
     """
-    Função para extrair os dados da API do Banco Central.
-
+    Função que faz uma requisição a API do Banco Central do Brasil e retorna um DataFrame com os dados de Meios de Pagamentos Trimestral
+    
     Parâmetros:
-    data - string - AAAAT (Exemplo: 20191)
+    data: data - string - aaaat (ex: 20231)
 
     Saída:
     DataFrame - Estrutura de dados do pandas
     """
     url = f"https://olinda.bcb.gov.br/olinda/servico/MPV_DadosAbertos/versao/v1/odata/MeiosdePagamentosTrimestralDA(trimestre=@trimestre)?@trimestre=%27{data}%27&$format=json"
     req = requests.get(url)
-    print("Status Code:", req.status_code)
     dados = req.json()
-
-    df = pd.json_normalize(dados["value"])
-    df["datatrimestre"] = pd.to_datetime(df["datatrimestre"])
+    df = pd.json_normalize(dados['value'])
+    df['datatrimestre'] = pd.to_datetime(df['datatrimestre'])
     return df
+    

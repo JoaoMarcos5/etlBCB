@@ -1,4 +1,20 @@
-# etlBCB
+# ETLbcb
+
+## Detalhamento das Funções do Repositório 📜
+
+### 🔁 Conversão de dados para CSV
+~~~~python
+def salvarCsv(df: pd.DataFrame, nome_arquivo: str, separador: str, decimal: str):
+    df.to_csv(nome_arquivo, sep=separador, decimal=decimal)
+    return
+~~~~
+Essa função facilita a exportação de um DataFrame do Pandas para um arquivo .csv, permitindo personalizar o formato.
+
+O que ela faz:
+
+* Recebe o DataFrame, o nome do arquivo, o separador de colunas (sep) e o caractere para casas decimais (decimal).
+* Usa o método to_csv() para salvar os dados com essas configurações.
+* É útil para garantir compatibilidade com ferramentas que exigem formatos específicos, como o Excel, que pode usar ; como separador e , para decimais em algumas regiões, como o Brasil.
 
 # Dicionário de Dados do Repositório
 
